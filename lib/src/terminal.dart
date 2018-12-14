@@ -4,6 +4,9 @@ import 'dart:io';
 import 'package:prompter_rhokstar/src/option.dart';
 
 class Terminal {
+  // Define terminal as a const constructor, which will allow to create only one instance and reuse of Terminal.
+  const Terminal();
+
   void printPrompt(String prompt) {
     stdout.writeln(prompt);
   }
@@ -17,7 +20,7 @@ class Terminal {
   });
     
 
-    stdout.writeln('Choose The Red Pill or The Blue pill...\n');
+    // stdout.writeln('Choose The Red Pill or The Blue pill...\n');
     stdout.write('>');
   }
 

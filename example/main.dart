@@ -1,16 +1,19 @@
-// Demo on using libraries
-
-// Run "Get packages" by right clicking on pubspec.yaml for this import to show.
-import 'package:prompter_rhokstar/src/option.dart';
-import 'package:prompter_rhokstar/src/prompter.dart';
+// Only imports code relevant developers should use only.
+import 'package:prompter_rhokstar/prompter_rhokstar.dart';
 
 void main() {
-  var prompter = new Prompter();
-
-  var options = [
+  final options = [
     new Option('The Red Pill', '#f00'),
     new Option('The Blue Pill', '#00f')
   ];
 
-  prompter.ask('What pill do you want?', options);
+  // Create new instance of Prompter
+  final prompter = new Prompter();
+
+  String pillColor = prompter.askMultiple('Morpheus asks you... select a pill:\n', options);
+
+  bool answer = prompter.askBinary('Do you like Dart?');
+
+  print(pillColor);
+  print(answer);
 }
